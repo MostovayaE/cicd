@@ -1,0 +1,13 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - podman build -t my_flask_app .
+  run:
+    cmds:
+      - sh podman_run.sh
+  test:
+    cmds:
+      - echo "Running tests..."
+      - podman run --rm my_flask_app python -m unittest discover
